@@ -1,5 +1,14 @@
 <h1>New Contact</h1>
 
-<%= render 'form' %>
+<%= form_for @contact, :url => { :action => "create" }  do |c|  %>
+
+    First Name:  <%= c.text_field  :firstName %> </br>
+    Middle Name: <%= c.text_field  :middleName %> </br>
+    Last Name:   <%= c.text_field  :lastName %> </br>
+    Email:       <%= c.email_field  :email %> </br>
+    Phone Number:<%= c.phone_field  :phoneNumber %> </br>
+    <%= c.submit "Add Contact", class: "btn btn-primary" %>
+<%end%>
+
 
 <%= link_to 'Back', contacts_path %>

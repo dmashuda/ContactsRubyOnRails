@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  before_action :set_contact, only: [ :show, :edit, :update, :destroy]
 
   # GET /contacts
   # GET /contacts.json
@@ -11,6 +11,7 @@ class ContactsController < ApplicationController
   # GET /contacts/1
   # GET /contacts/1.json
   def show
+
     @contact = Contact.find params[:id]
   end
 
@@ -21,13 +22,16 @@ class ContactsController < ApplicationController
 
   # GET /contacts/1/edit
   def edit
+
   end
 
   # POST /contacts
   # POST /contacts.json
   def create
-    @contact = Contact.new(contact_params)
-    @contact.user_id = current_user[:id]
+    @contact = Contact.create(contact_params)
+    @contact[:user_id] = current_user[:id]
+
+
 
     respond_to do |format|
       if @contact.save
@@ -72,6 +76,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params[:contact]
+      params[:contact].permit(:firstName, :lastName, :middleName, :email, :phoneNumber)
     end
 end

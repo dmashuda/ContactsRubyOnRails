@@ -1,6 +1,14 @@
 <h1>Editing Contact</h1>
 
-<%= render 'form' %>
+<%= form_for @contact, :url => { :action => "update" }  do |c|  %>
+
+    First Name:  <%= c.text_field  :firstName %> </br>
+    Middle Name: <%= c.text_field  :middleName %> </br>
+    Last Name:   <%= c.text_field  :lastName %> </br>
+    Email:       <%= c.email_field  :email %> </br>
+    Phone Number:<%= c.phone_field  :phoneNumber %> </br>
+    <%= c.submit "Edit Contact", class: "btn btn-primary" %>
+<%end%>
 
 <%= link_to 'Show', @contact %> |
 <%= link_to 'Back', contacts_path %>
