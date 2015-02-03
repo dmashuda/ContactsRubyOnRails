@@ -4,7 +4,11 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
-    @contacts = current_user.contacts.all.limit(10)
+    if signed_in?
+      @contacts = current_user.contacts.all.limit(10)
+    else
+      redirect_to "/users/sign_in"
+    end
     #@contacts = Contact.all.limit(10)
   end
 
@@ -57,6 +61,10 @@ class ContactsController < ApplicationController
       end
     end
   end
+
+    def signed_in?
+      !current_user.nil?
+    end
 
   # DELETE /contacts/1
   # DELETE /contacts/1.json

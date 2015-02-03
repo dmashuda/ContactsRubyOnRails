@@ -2,10 +2,15 @@
 
 <h1>Listing Contacts</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Owner ID</th>
+      <th>First Name</th>
+      <th>Middle Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
     </tr>
   </thead>
 
@@ -16,6 +21,8 @@
         <td>  <%= contact.firstName %><br /></td>
         <td>  <%= contact.middleName %><br /></td>
         <td>  <%= contact.lastName %><br /></td>
+        <td>  <%= contact.email %><br /></td>
+        <td>  <%= contact.phoneNumber %><br /></td>
 
         <td><%= link_to 'Show', contact %></td>
         <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
