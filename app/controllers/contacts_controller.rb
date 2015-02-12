@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
   def index
     if signed_in?
 
-      @contacts = current_user.contacts.all.paginate :page => params[:page], :per_page => 10
+      @contacts = current_user.contacts.all.paginate :page => params[:page], :per_page => 3
     else
       redirect_to "/users/sign_in"
     end

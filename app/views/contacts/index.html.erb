@@ -31,7 +31,9 @@
     <% end %>
   </tbody>
 </table>
-<%= will_paginate @contacts %>
+<div class="pagination">
+  <%= will_paginate @contacts, renderer: BootstrapPagination::Rails %>
+</div>
 
 <br>
 

@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 
+gem 'will_paginate-bootstrap'
 gem 'will_paginate'
 
 # Use ActiveModel has_secure_password
