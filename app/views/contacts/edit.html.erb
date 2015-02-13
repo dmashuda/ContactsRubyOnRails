@@ -4,23 +4,39 @@
     <table class="table">
       <tr>
         <td>First Name:</td>
-        <td><%= c.text_field  :firstName %> </td>
+        <td>
+          <%= c.text_field  :firstName %>
+          <span class="help-inline"><%= @contact.errors[:firstName].join(", ")%></span>
+        </td>
       </tr>
       <tr>
         <td>Middle Name:</td>
-        <td><%= c.text_field  :middleName %></td>
+        <td>
+          <%= c.text_field  :middleName %>
+          <span class="help-inline"><%= @contact.errors[:middleName].join(", ")%></span>
+        </td>
       </tr>
       <tr>
         <td>Last Name:</td>
-        <td><%= c.text_field  :lastName %></td>
+        <td>
+          <%= c.text_field  :lastName %>
+          <span class="help-inline"><%= @contact.errors[:lastName].join(", ")%></span>
+        </td>
       </tr>
       <tr>
         <td>Email:</td>
-        <td><%= c.email_field  :email %></td>
+        <td>
+          <%= c.email_field  :email %>
+          <span class="help-inline"><%= @contact.errors[:email].join(", ")%></span>
+        </td>
       </tr>
       <tr>
         <td>Phone Number:</td>
-        <td><%= c.text_field  :phoneNumber %></td>
+        <td>
+          <%= c.text_field  :phoneNumber %>
+          <span class="help-inline"><%= @contact.errors[:phoneNumber].join(", ")%></span>
+
+        </td>
       </tr>
     </table>
     <%= c.submit "Save Changes", class: "btn btn-primary" %>

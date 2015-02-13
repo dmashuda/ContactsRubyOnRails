@@ -1,3 +1,39 @@
+<h1>Contact: <%= @contact[:id]%></h1>
+
+
+<table class="table">
+  <tr>
+    <td>First Name:</td>
+    <td>
+      <%= @contact[:firstName]%>
+    </td>
+  </tr>
+  <tr>
+    <td>Middle Name:</td>
+    <td>
+      <%= @contact[:middleName]%>
+    </td>
+  </tr>
+  <tr>
+    <td>Last Name:</td>
+    <td>
+      <%= @contact[:lastName]%>
+    </td>
+  </tr>
+  <tr>
+    <td>Email:</td>
+    <td>
+      <%= @contact[:email]%>
+    </td>
+  </tr>
+  <tr>
+    <td>Phone Number:</td>
+    <td>
+      <%= @contact[:phoneNumber]%>
+    </td>
+  </tr>
+</table>
+
 <p id="notice"><%= notice %></p>
 
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
